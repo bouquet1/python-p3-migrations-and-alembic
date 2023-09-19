@@ -16,10 +16,13 @@ if config.config_file_name is not None:
 
 # add your model's MetaData object here
 # for 'autogenerate' support
-# from myapp import mymodel
-# target_metadata = mymodel.Base.metadata
+# from myapp import mymodel - Tom bunlari sildi lecture da asagidakiler ekledi
+# target_metadata = mymodel.Base.metadata -Tom bunlari sildi lecture da asagidakiler ekledi
 from models import Base
+#let's create that file and Base doesn't exist roignt now let's fix it 
+# from sqlalchemy.orm import declarative_base ve Base = declarative_base() yazdik models.py dosyasina
 target_metadata = Base.metadata
+# target_metadata = None
 
 # other values from the config, defined by the needs of env.py,
 # can be acquired:

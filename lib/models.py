@@ -1,16 +1,17 @@
 
 from datetime import datetime
-
-from sqlalchemy import create_engine, desc
-from sqlalchemy import Column, DateTime, Integer, String
-
-from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy import Column, DateTime, Integer, String, create_engine, desc
+from sqlalchemy.orm import declarative_base
+#from sqlalchemy.ext.declarative import declarative_base (same as the line above)
 
 engine = create_engine('sqlite:///migrations_test.db')
 
+#define the Base class
 Base = declarative_base()
 
+#Define a Student class and inherit from Base
 class Student(Base):
+    #define the table name using __tablename__
     __tablename__ = 'students'
 
     id = Column(Integer(), primary_key=True)
