@@ -4,7 +4,6 @@ from sqlalchemy import Column, DateTime, Integer, String, create_engine, desc
 from sqlalchemy.orm import declarative_base
 #from sqlalchemy.ext.declarative import declarative_base (same as the line above)
 
-#engine = create_engine('sqlite:///migrations_test.db')
 
 #define the Base class
 Base = declarative_base()
@@ -20,10 +19,12 @@ class Student(Base):
     birthday = Column(DateTime())
     enrolled_date = Column(DateTime(), default=datetime.now())
 
-    # def __repr__(self):
-    #     return f"Student {self.id}: " \
-    #         + f"{self.name}, " \
-    #         + f"Grade {self.grade}"
+    #defines how we want this info printed out
+    def __repr__(self):
+        return f"Student {self.id}: " \
+            + f"{self.name}, " \
+            + f"Grade {self.grade}"
 
 
+#engine = create_engine('sqlite:///migrations_test.db')
 
